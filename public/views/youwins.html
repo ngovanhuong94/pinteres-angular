@@ -1,0 +1,39 @@
+<div class="container">
+ <div class="row">
+  <h2 class="title-win-page">Your Wins</h2>
+   <hr class="hr-top"/>
+   <div class="col-xs-3">
+     <div class="panel">
+       <div class="panel-body">
+       	 
+       	<form ng-submit="add()" method="post" name="addWinForm">
+       	  <div class="form-group">
+          <input class="form-control input-lg" placeholder="Title" required
+          name="title"
+          ng-model="title"
+           type="text" /> 
+       	 </div>
+       	 <div class="form-group">
+          <input
+          ng-model="sourceUrl" name="sourceUrl"
+          class="form-control input-lg" placeholder="Source Url" required
+           type="text" /> 
+       	 </div>
+       	 <button ng-disabled="addWinForm.$invalid" class="btn btn-block btn-lg btn-success">Add Win</button>
+       	 </form>
+       </div>
+     </div>
+   </div>
+   <div class="col-xs-3" ng-repeat="win in yourwins">
+      <div class="panel">
+      	<div class="panel-body"> 
+      		<img ng-src="{{win.sourceUrl}}" alt="" width="100%">
+      		<h4 ng-bind="win.title"></h4>
+      		<div class="icon-actions"><i ng-click="delete(win._id)" class="fa fa-trash-o icon-delete pull-left" aria-hidden="true"></i>
+      		<i class="fa fa-heart icon-love pull-right" aria-hidden="true">{{win.likes.length}}</i>
+      	  </div>
+      	</div>
+      </div>
+   </div>
+ </div>
+</div>

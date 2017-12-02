@@ -1,0 +1,21 @@
+<div class="container">
+ <div class="row">
+   <h2 class="title-win-page">Recent Wins</h2>
+   <hr class="hr-top"/>
+   <div class="col-xs-3" ng-repeat="win in wins">
+      <div class="panel">
+      	<div class="panel-body"> 
+      		<img ng-src="{{win.sourceUrl}}" alt="" width="100%">
+      		<h4 ng-bind="win.title"></h4>
+            <h5 class="pull-left" >{{win.author.split('@')[0]}}</h5>
+      		<div class="icon-actions">
+      		<i ng-if="!currentUser" class="fa fa-heart icon-love pull-right" aria-hidden="true">{{win.likes.length}}</i>
+            <div ng-if="currentUser" ng-class="{'youLiked': win.likes.indexOf(currentUser.email) !== -1, 'youDontLike': win.likes.indexOf(currentUser.email) === -1}">
+      		<i  ng-click="like(win._id)" class="fa fa-heart icon-love pull-right" aria-hidden="true">{{win.likes.length}}</i>
+            </div>
+      	  </div>
+      	</div>
+      </div>
+   </div>
+ </div>
+</div>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+	<base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Pinterest Clone</title>
+</head>
+<body>
+<nav ng-controller="NavbarCtrl" class="navbar navbar-default" role="navigation" bs-navbar>
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Pinterest Clone</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+               <li ng-if="currentUser" data-match-route="/yourwins"><a href="/yourwins">Yourwins</a></li>
+               <li data-match-route="/recents"><a href="/recents">Recents</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-if="!currentUser">
+              <li data-match-route="/login"><a href="/login">Login</a></li>
+              <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-if="currentUser">
+              <li class="navbar-text" ng-bind="currentUser.email"></li>
+              <li><a href="javacript:void(0)" ng-click="logout()">Logout</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<div class="content-body">
+ <div ng-view></div>
+ </div>
+ <footer class="footer">
+ <div class="container">
+  <p class="text-center">winterest | <a href="">Ngo Huong</a> | <a href="">on Github</a></p>
+ </div>	
+ </footer>
+ <script src="vendor/angular.js"></script>
+ <script src="vendor/angular-resource.js"></script>
+ <script src="vendor/angular-cookies.js"></script>
+ <script src="vendor/angular-messages.js"></script>
+ <script src="vendor/angular-route.js"></script>
+ <script src="vendor/angular-strap.js"></script>
+ <script src="vendor/angular-strap.tpl.js"></script>
+ <script src="vendor/angular-animate.js"></script>
+ <script src="vendor/angular-mocks.js"></script>
+ <script src="vendor/moment.min.js"></script>
+
+ <script src="app.js"></script>
+ <!-- services -->
+ <script src="services/auth.js"></script>
+ <script src="services/yourwins.js"></script>
+ <!-- controllers -->
+ <script src="controllers/main.js"></script>
+ <script src="controllers/login.js"></script>
+ <script src="controllers/signup.js"></script>
+ <script src="controllers/navbar.js"></script>
+ <script src="controllers/yourwins.js"></script>
+ <script src="controllers/recents.js"></script>
+<!-- directives -->
+ <script src="directives/repeatPassword.js"></script>
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

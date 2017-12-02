@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+$icon-font-path: '../fonts';
+@import 'bootstrap/bootstrap';
+
+.center-form {
+ width: 330px;
+ margin: 10% auto;
+	input {
+	 border-radius: 0px;
+	}
+}
+
+.btn {
+	border-radius: 2px;
+}
+
+.panel {
+  border-color: #cfd9d7;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.panel-default > .panel-heading {
+  color: #444;
+  border-color: #cfd9db;
+  font-weight: bold;
+  font-size: 85%;
+  text-transform: uppercase;
+  background-color: #f6f6f6;
+}
+.alert {
+  box-shadow: 0 0px 5px rgba(0,0,0,0.3);
+}
+
+.alert.top-right {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  margin: 20px;
+  z-index: 1050;
+  outline: none;
+
+  .close {
+    padding-left: 10px;
+  }
+}
+.label {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  transition: 0.1s all;
+  -webkit-font-smoothing: antialiased;
+}
+
+.label-default {
+  background-color: #e4e7ec;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: #90939a;
+
+  &:hover {
+    background-color: #90939a;
+    color: #f4f6f8;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+.icon-actions {
+  width: 100%;
+  color: red;
+  font-size: 20px;
+}
+.icon-love {
+margin-right: 5px;
+}
+.icon-delete {
+  margin-left: 5px;
+}
+
+.youDontLike {
+  color: grey;
+}
+
+.youLiked {
+  color: red;
+}
+
+.hero-unit {
+   width: 100%;
+  height: 900px;
+  background-size: cover;
+  position: relative;
+  background-image: url('http://stark-lowlands-3680.herokuapp.com/assets/images/5cdfe422.freeski1.jpeg');
+}
+
+.content-body {
+  min-height: 600px;
+}
+
+.title-win-page {
+  padding-left: 20px;
+  color: grey;
+}
+
+.hr-top {
+    margin: 20px auto 20px;
+    padding: 0;
+    max-width: 98%;
+    border: 0;
+    border-top: solid 3px;
+    text-align: center;
+    border-color: #cfd9d7;
+}
